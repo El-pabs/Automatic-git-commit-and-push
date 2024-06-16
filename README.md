@@ -111,8 +111,6 @@ run_auto_commit_push.cmd
 
 ### Version Française du README.md
 
-#### Version Anglaise
-
 # Auto Commit and Push
 
 Un projet GitHub qui effectue automatiquement des commits et des pushs de toutes les modifications qui se sont produits dans votre répertoire toutes les 6 heures.
