@@ -67,7 +67,7 @@ fi
 ### Step 3: put your files in the right folder
 
 Here's a path to go to the home path directly, then just click on your username directory : `C:\cygwin64\home`
-Create a folder named : `auto_commit_push` and put the two files in it. 
+Create a folder named : `auto_commit_push` and put the `auto_commit_push.sh` and `run_script.cmd` files in it. 
 
 Now change the `run_script.cmd` file by changing the value of `CYGWIN_SCRIPT_WIN` to the absolute path of your `auto_commit_push.sh` file
 
@@ -172,7 +172,7 @@ fi
 ### Étape 3 : Mettre vos fichiers dans le bon dossier
 
 Voici un chemin pour aller directement au chemin d'accueil, puis cliquez simplement sur le répertoire de votre nom d'utilisateur : `C:\cygwin64\home`
-Créez un dossier nommé : `auto_commit_push` et mettez-y les deux fichiers.
+Créez un dossier nommé : `auto_commit_push` et mettez-y les fichiers `auto_commit_push.sh` et `run_script.cmd`.
 
 Maintenant, changez le fichier `run_script.cmd` en modifiant la valeur de `CYGWIN_SCRIPT_WIN` par le chemin absolu de votre fichier `auto_commit_push.sh`
 
