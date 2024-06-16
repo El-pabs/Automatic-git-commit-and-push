@@ -1,12 +1,13 @@
 #!/bin/bash
 
-# Répertoire à surveiller
-WATCHED_DIR=$(cygpath -w /cygdrive/c/Users/robin/Downloads/Cours)
+# Directory to watch
+# yourusername is the current user username, you can find it by going to C:\Users
+WATCHED_DIR="/cygdrive/c/Users/yourusername/YourDirectory"
 
-# Branche Git à utiliser
-BRANCH="Cours"
+# Git branch to push to
+BRANCH="main"
 
-# Fonction pour ajouter, commit et push
+# Function to perform git add, commit, and push
 commit_and_push() {
     cd "$WATCHED_DIR" || exit
     git add -A
@@ -14,11 +15,11 @@ commit_and_push() {
     git push origin "$BRANCH"
 }
 
-# Vérifier et tirer les changements du dépôt distant
+# Check and pull changes from the remote repository
 cd "$WATCHED_DIR" || exit
 git pull origin "$BRANCH"
 
-# Vérifier s'il y a des changements à pousser
+# Check if there are changes to push
 if ! git diff-index --quiet HEAD --; then
     echo "Changes detected. Committing and pushing changes..."
     commit_and_push
