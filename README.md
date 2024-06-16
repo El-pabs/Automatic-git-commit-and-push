@@ -1,5 +1,7 @@
 ### README.md
 
+[![Version Française](https://img.shields.io/badge/Version%20Française-Click%20Here-blue)](#version-française-du-readmemd)
+
 ![](https://komarev.com/ghpvc/?username=El-pabs&style=flat-square)
 
 
