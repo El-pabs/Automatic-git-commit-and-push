@@ -15,18 +15,46 @@ A GitHub project that automatically commits and pushes all changes that happen i
 
 - [Cygwin](https://www.cygwin.com/) installed on your Windows machine.
 - Git installed and configured with your GitHub repository.
+- MinGW (Minimalist GNU for Windows) installed to compile C programs.
 
 ## Setup
 
-### Step 1: Clone the Repository
+### Step 1: Install Dependencies
+
+#### Install Cygwin
+
+1. Download the Cygwin setup executable from the official website: https://www.cygwin.com/
+2. Run the setup and select the required packages during installation, including the "Base" packages that contain bash.
+
+#### Install MinGW
+
+1. Download the MinGW installer from the official website: https://sourceforge.net/projects/mingw/
+2. Run the installer and follow the on-screen instructions to install MinGW.
+3. During installation, select the `mingw32-base` and `mingw32-gcc-g++` packages.
+4. Add the MinGW `bin` directory (e.g., `C:\MinGW\bin`) to your system's `PATH` environment variable.
+   To do this, search for "Environment Variables" in the Start menu, click on Edit the system environment variables, then add the path to the Path variable
+
+### Step 2: Clone the Repository
 
 Clone this repository to your local machine.
 
 ```bash
-git clone https://github.com/yourusername/Automatic-git-commit-and-push.git
+git clone https://github.com/El-pabs/Automatic-git-commit-and-push.git
 ```
 
-### Step 2: Configure the Script
+### Step 3: Compile the C Program
+
+1. Create a new file named `startup_program.c` and copy the provided C code into it.
+2. Open the Command Prompt and navigate to the directory containing `startup_program.c`.
+3. Compile the program using the following command:
+
+```
+gcc startup_program.c -o startup_program.exe
+```
+
+This will create an executable file named `startup_program.exe`.
+
+### Step 4: Configure the Script
 
 Edit the `auto_commit_push.sh` script to specify the directory you want to monitor and the Git branch you want to use.
 
@@ -65,50 +93,36 @@ else
 fi
 ```
 
+### Step 5: Configure the Startup Script
 
-### Step 3: put your files in the right folder
-
-Here's a path to go to the home path directly, then just click on your username directory : `C:\cygwin64\home`
-Create a folder named : `auto_commit_push` and put the `auto_commit_push.sh` and `run_script.bat` files in it. 
-
-Now change the `run_script.bat` file by changing the value of `CYGWIN_SCRIPT_WIN` to the absolute path of your `auto_commit_push.sh` file
+1. Create a new folder named `auto_commit_push` in your Cygwin home directory (e.g., `C:\cygwin64\home\yourusername`).
+2. Move the `auto_commit_push.sh` and `startup_program.exe` files into the `auto_commit_push` folder.
+3. Create a new batch file named `run_script.bat` in the same folder with the following content:
 
 ```batch
 @echo off
 setlocal
 set CYGWIN_BIN=C:\cygwin64\bin
+set STARTUP_PROGRAM=C:\cygwin64\home\yourusername\auto_commit_push\startup_program.exe
+%STARTUP_PROGRAM%
 set CYGWIN_SCRIPT_WIN=C:\cygwin64\home\yourusername\auto_commit_push\auto_commit_push.sh
 for /f "delims=" %%A in ('%CYGWIN_BIN%\cygpath.exe -u "%CYGWIN_SCRIPT_WIN%"') do set CYGWIN_SCRIPT_UNIX=%%A
 endlocal & %CYGWIN_BIN%\bash --login -c "%CYGWIN_SCRIPT_UNIX%"
 pause
 ```
 
+Make sure to replace `yourusername` with your actual Windows username.
 
-### Step 4: Configure Task Scheduler
+### Step 6: Add the Program to Windows Startup
 
-1. Open Task Scheduler by pressing `Windows + R`, typing `taskschd.msc`, and pressing `Enter`.
-2. Click on "Create Task" in the right pane.
-3. Name your task, for example, "Auto Commit and Push".
-4. Check "Run with highest privileges".
-5. Go to the "Triggers" tab and click "New...".
-   - Set "Begin the task" to "On start".
-   - Set "Repeat task every" to "6 hours".
-   - set "End after" to "30 minutes".
-   - Click "OK".
-6. Go to the "Actions" tab and click "New...".
-   - Set "Action" to "Start a program".
-   - Browse to and select your `run_script.bat` file.
-   - Click "OK".
-7. Go to the "Condition" tab and click on run only when plugged-in to unselect it, then click to only work if connected to internet to select it.
-8. Click "OK" to create the task.
+1. Press `Windows + R` to open the Run dialog, type `shell:startup`, and press Enter. This will open the Startup folder.
+2. Right-click in the Startup folder, select `New > Shortcut`.
+3. In the "Create Shortcut" window, enter the full path to your `run_script.bat` file (e.g., `C:\cygwin64\home\yourusername\auto_commit_push\run_script.bat`).
+4. Click `Next`, give the shortcut a name, and click `Finish`.
 
-### Step 5: Verify the Setup
+### Step 7: Verify the Setup
 
-Run the batch file manually to ensure it works correctly before relying on the Task Scheduler.
-
-```batch
-run_script.bat
-```
+Restart your computer to ensure that the `startup_program.exe` runs automatically at startup and executes the `run_script.bat` file, which in turn runs the `auto_commit_push.sh` script every 2 hours.
 
 ---
 
@@ -122,18 +136,46 @@ Un projet GitHub qui effectue automatiquement des commits et des pushs de toutes
 
 - [Cygwin](https://www.cygwin.com/) installé sur votre machine Windows.
 - Git installé et configuré avec votre dépôt GitHub.
+- MinGW (Minimalist GNU for Windows) installé pour compiler les programmes C.
 
 ## Configuration
 
-### Étape 1 : Cloner le Répertoire
+### Étape 1 : Installer les Dépendances
+
+#### Installer Cygwin
+
+1. Téléchargez l'exécutable d'installation de Cygwin depuis le site officiel : https://www.cygwin.com/
+2. Exécutez l'installation et sélectionnez les packages requis, y compris les packages "Base" qui contiennent bash.
+
+#### Installer MinGW
+
+1. Téléchargez l'installateur MinGW depuis le site officiel : https://sourceforge.net/projects/mingw/
+2. Exécutez l'installateur et suivez les instructions à l'écran pour installer MinGW.
+3. Pendant l'installation, sélectionnez les packages `mingw32-base` et `mingw32-gcc-g++`.
+4. Ajoutez le répertoire `bin` de MinGW (par exemple, `C:\MinGW\bin`) à la variable d'environnement `PATH` de votre système.
+   Pour ce faire, recherchez "Variables d'environnement" dans le menu Démarrer, cliquez sur Modifier les variables d'environnement, puis ajoutez le chemin à la variable Path.
+
+### Étape 2 : Cloner le Répertoire
 
 Clonez ce répertoire sur votre machine locale.
 
 ```bash
-git clone https://github.com/yourusername/Automatic-git-commit-and-push.git
+git clone https://github.com/El-pabs/Automatic-git-commit-and-push.git
 ```
 
-### Étape 2 : Configurer le Script
+### Étape 3 : Compiler le Programme C
+
+1. Créez un nouveau fichier nommé `startup_program.c` et copiez-y le code C fourni.
+2. Ouvrez l'invite de commandes et naviguez jusqu'au répertoire contenant `startup_program.c`.
+3. Compilez le programme en utilisant la commande suivante :
+
+```
+gcc startup_program.c -o startup_program.exe
+```
+
+Cela créera un fichier exécutable nommé `startup_program.exe`.
+
+### Étape 4 : Configurer le Script
 
 Modifiez le script `auto_commit_push.sh` pour spécifier le répertoire que vous souhaitez surveiller et la branche Git que vous souhaitez utiliser.
 
@@ -172,43 +214,41 @@ else
 fi
 ```
 
-### Étape 3 : Mettre vos fichiers dans le bon dossier
+### Étape 5 : Configurer le Script de Démarrage
 
-Voici un chemin pour aller directement au chemin d'accueil, puis cliquez simplement sur le répertoire de votre nom d'utilisateur : `C:\cygwin64\home`
-Créez un dossier nommé : `auto_commit_push` et mettez-y les fichiers `auto_commit_push.sh` et `run_script.bat`.
-
-Maintenant, changez le fichier `run_script.bat` en modifiant la valeur de `CYGWIN_SCRIPT_WIN` par le chemin absolu de votre fichier `auto_commit_push.sh`
+1. Créez un nouveau dossier nommé `auto_commit_push` dans votre répertoire home Cygwin (par exemple, `C:\cygwin64\home\yourusername`).
+2. Déplacez les fichiers `auto_commit_push.sh` et `startup_program.exe` dans le dossier `auto_commit_push`.
+3. Créez un nouveau fichier batch nommé `run_script.bat` dans le même dossier avec le contenu suivant :
 
 ```batch
 @echo off
 setlocal
 set CYGWIN_BIN=C:\cygwin64\bin
+set STARTUP_PROGRAM=C:\cygwin64\home\yourusername\auto_commit_push\startup_program.exe
+%STARTUP_PROGRAM%
 set CYGWIN_SCRIPT_WIN=C:\cygwin64\home\yourusername\auto_commit_push\auto_commit_push.sh
 for /f "delims=" %%A in ('%CYGWIN_BIN%\cygpath.exe -u "%CYGWIN_SCRIPT_WIN%"') do set CYGWIN_SCRIPT_UNIX=%%A
 endlocal & %CYGWIN_BIN%\bash --login -c "%CYGWIN_SCRIPT_UNIX%"
 pause
 ```
 
-### Étape 4 : Configurer le Planificateur de Tâches
+Assurez-vous de remplacer `yourusername` par votre nom d'utilisateur Windows réel.
 
-1. Ouvrez le Planificateur de Tâches en appuyant sur `Windows + R`, en tapant `taskschd.msc`, et en appuyant sur `Entrée`.
-2. Cliquez sur "Créer une tâche" dans le volet de droite.
-3. Nommez votre tâche, par exemple, "Auto Commit and Push".
-4. Cochez "Exécuter avec les privilèges les plus élevés".
-5. Allez dans l'onglet "Déclencheurs" et cliquez sur "Nouveau...".
-   - Réglez "Commencer la tâche" sur "Au démarrage".
-   - Réglez "Répéter la tâche toutes les" sur "6 heures".
-   - Réglez "Arrêter après" sur "30 minutes".
-   - Cliquez sur "OK".
-6. Allez dans l'onglet "Actions" et cliquez sur "Nouveau...".
-   - Réglez "Action" sur "Démarrer un programme".
-   - Parcourez et sélectionnez votre fichier `run_script.bat`.
-   - Cliquez sur "OK".
-7. Allez dans l'onglet "Condition" et déséléctionner la case ne démarrer la tâche que si l'ordinateur est relié au secteur et selectionner la case démarrer qui si connecter au réseau
-8. Cliquez sur "OK" pour créer la tâche.
+### Étape 6 : Ajouter le Programme au Démarrage de Windows
 
-### Étape 5 : Vérifier la Configuration
+1. Appuyez sur `Windows + R` pour ouvrir la boîte de dialogue Exécuter, tapez `shell:startup`, et appuyez sur Entrée. Cela ouvrira le dossier de démarrage.
+2. Faites un clic droit dans le dossier de démarrage, sélectionnez `Nouveau > Raccourci`.
+3. Dans la fenêtre "Créer un raccourci", entrez le chemin complet vers votre fichier `run_script.bat` (par exemple, `C:\cygwin64\home\yourusername\auto_commit_push\run_script.bat`).
+4. Cliquez sur `Suivant`, donnez un nom au raccourci, et cliquez sur `Terminer`.
 
+### Étape 7 : Vérifier la Configuration
+
+Redémarrez votre ordinateur pour vous assurer que `startup_program.exe` se lance automatiquement au démarrage et exécute le fichier `run_script.bat`, qui à son tour exécute le script `auto_commit_push.sh` toutes les 2 heures.
+
+Citations:
+[1] https://img.shields.io/badge/Version%20Fran
+[2] https://komarev.com/ghpvc/?style=flat-square&username=El-pabs
+[3] https://www.cygwin.com
 Exécutez le fichier batch manuellement pour vous assurer qu'il fonctionne correctement avant de compter sur le Planificateur de Tâches.
 
 ```batch
