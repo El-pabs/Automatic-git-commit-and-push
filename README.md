@@ -96,8 +96,8 @@ fi
 ### Step 5: Configure the Startup Script
 
 1. Create a new folder named `auto_commit_push` in your Cygwin home directory (e.g., `C:\cygwin64\home\yourusername`).
-2. Move the `auto_commit_push.sh` and `startup_program.exe` files into the `auto_commit_push` folder.
-3. Create a new batch file named `run_script.bat` in the same folder with the following content:
+2. Move the `auto_commit_push.sh`, `run_script.bat` and `startup_program.exe` files into the `auto_commit_push` folder.
+3. Modify the batch file named `run_script.bat` by making sure to replace `yourusername` with your actual Windows username :
 
 ```batch
 @echo off
@@ -111,7 +111,6 @@ endlocal & %CYGWIN_BIN%\bash --login -c "%CYGWIN_SCRIPT_UNIX%"
 pause
 ```
 
-Make sure to replace `yourusername` with your actual Windows username.
 
 ### Step 6: Add the Program to Windows Startup
 
@@ -217,8 +216,8 @@ fi
 ### Étape 5 : Configurer le Script de Démarrage
 
 1. Créez un nouveau dossier nommé `auto_commit_push` dans votre répertoire home Cygwin (par exemple, `C:\cygwin64\home\yourusername`).
-2. Déplacez les fichiers `auto_commit_push.sh` et `startup_program.exe` dans le dossier `auto_commit_push`.
-3. Créez un nouveau fichier batch nommé `run_script.bat` dans le même dossier avec le contenu suivant :
+2. Déplacez les fichiers `auto_commit_push.sh`, `run_script.bat` et `startup_program.exe` dans le dossier `auto_commit_push`.
+3. Modifiez le fichier batch nommé `run_script.bat` dans le même dossier avec le contenu suivant :
 
 ```batch
 @echo off
