@@ -69,9 +69,9 @@ fi
 ### Step 3: put your files in the right folder
 
 Here's a path to go to the home path directly, then just click on your username directory : `C:\cygwin64\home`
-Create a folder named : `auto_commit_push` and put the `auto_commit_push.sh` and `run_script.cmd` files in it. 
+Create a folder named : `auto_commit_push` and put the `auto_commit_push.sh` and `run_script.bat` files in it. 
 
-Now change the `run_script.cmd` file by changing the value of `CYGWIN_SCRIPT_WIN` to the absolute path of your `auto_commit_push.sh` file
+Now change the `run_script.bat` file by changing the value of `CYGWIN_SCRIPT_WIN` to the absolute path of your `auto_commit_push.sh` file
 
 ```batch
 @echo off
@@ -97,7 +97,7 @@ pause
    - Click "OK".
 6. Go to the "Actions" tab and click "New...".
    - Set "Action" to "Start a program".
-   - Browse to and select your `run_auto_commit_push.cmd` file.
+   - Browse to and select your `run_script.bat` file.
    - Click "OK".
 7. Click "OK" to create the task.
 
@@ -106,7 +106,7 @@ pause
 Run the batch file manually to ensure it works correctly before relying on the Task Scheduler.
 
 ```batch
-run_auto_commit_push.cmd
+run_script.bat
 ```
 
 ---
@@ -174,9 +174,9 @@ fi
 ### Étape 3 : Mettre vos fichiers dans le bon dossier
 
 Voici un chemin pour aller directement au chemin d'accueil, puis cliquez simplement sur le répertoire de votre nom d'utilisateur : `C:\cygwin64\home`
-Créez un dossier nommé : `auto_commit_push` et mettez-y les fichiers `auto_commit_push.sh` et `run_script.cmd`.
+Créez un dossier nommé : `auto_commit_push` et mettez-y les fichiers `auto_commit_push.sh` et `run_script.bat`.
 
-Maintenant, changez le fichier `run_script.cmd` en modifiant la valeur de `CYGWIN_SCRIPT_WIN` par le chemin absolu de votre fichier `auto_commit_push.sh`
+Maintenant, changez le fichier `run_script.bat` en modifiant la valeur de `CYGWIN_SCRIPT_WIN` par le chemin absolu de votre fichier `auto_commit_push.sh`
 
 ```batch
 @echo off
@@ -201,7 +201,7 @@ pause
    - Cliquez sur "OK".
 6. Allez dans l'onglet "Actions" et cliquez sur "Nouveau...".
    - Réglez "Action" sur "Démarrer un programme".
-   - Parcourez et sélectionnez votre fichier `run_auto_commit_push.cmd`.
+   - Parcourez et sélectionnez votre fichier `run_script.bat`.
    - Cliquez sur "OK".
 7. Cliquez sur "OK" pour créer la tâche.
 
@@ -210,5 +210,5 @@ pause
 Exécutez le fichier batch manuellement pour vous assurer qu'il fonctionne correctement avant de compter sur le Planificateur de Tâches.
 
 ```batch
-run_auto_commit_push.cmd
+run_script.bat
 ```
