@@ -99,7 +99,8 @@ pause
    - Set "Action" to "Start a program".
    - Browse to and select your `run_script.bat` file.
    - Click "OK".
-7. Click "OK" to create the task.
+7. Go to the "Condition" tab and click on run only when plugged-in to unselect it, then click to only work if connected to internet to select it.
+8. Click "OK" to create the task.
 
 ### Step 5: Verify the Setup
 
@@ -203,7 +204,8 @@ pause
    - Réglez "Action" sur "Démarrer un programme".
    - Parcourez et sélectionnez votre fichier `run_script.bat`.
    - Cliquez sur "OK".
-7. Cliquez sur "OK" pour créer la tâche.
+7. Allez dans l'onglet "Condition" et déséléctionner la case ne démarrer la tâche que si l'ordinateur est relié au secteur et selectionner la case démarrer qui si connecter au réseau
+8. Cliquez sur "OK" pour créer la tâche.
 
 ### Étape 5 : Vérifier la Configuration
 
