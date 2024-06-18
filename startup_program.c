@@ -5,7 +5,7 @@
 #include <windows.h>
 
 #define INTERVAL 7200 // Intervalle de 2 heures en secondes
-#define DEFAULT_BAT_PATH "C:\\cygwin64\\home\\robin\\auto_commiter\\run_script.bat"
+#define DEFAULT_BAT_PATH "C:\\cygwin64\\home\\username\\auto_commiter\\run_script.bat"
 
 void executeBatFile(const char *batPath) {
     char command[512];
