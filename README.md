@@ -244,10 +244,6 @@ Assurez-vous de remplacer `yourusername` par votre nom d'utilisateur Windows ré
 
 Redémarrez votre ordinateur pour vous assurer que `startup_program.exe` se lance automatiquement au démarrage et exécute le fichier `run_script.bat`, qui à son tour exécute le script `auto_commit_push.sh` toutes les 2 heures.
 
-Citations:
-[1] https://img.shields.io/badge/Version%20Fran
-[2] https://komarev.com/ghpvc/?style=flat-square&username=El-pabs
-[3] https://www.cygwin.com
 Exécutez le fichier batch manuellement pour vous assurer qu'il fonctionne correctement avant de compter sur le Planificateur de Tâches.
 
 ```batch
