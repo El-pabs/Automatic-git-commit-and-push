@@ -45,8 +45,9 @@ git clone https://github.com/El-pabs/Automatic-git-commit-and-push.git
 ### Step 3: Compile the C Program
 
 1. Create a new file named `startup_program.c` and copy the provided C code into it.
-2. Open the Command Prompt and navigate to the directory containing `startup_program.c`.
-3. Compile the program using the following command:
+2.  Make sur to change the `username` part here : `#define DEFAULT_BAT_PATH "C:\\cygwin64\\home\\username\\auto_commiter\\run_script.bat"`
+3. Open the Command Prompt and navigate to the directory containing `startup_program.c`.
+4. Compile the program using the following command:
 
 ```
 gcc startup_program.c -o startup_program.exe
