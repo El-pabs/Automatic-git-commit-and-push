@@ -10,6 +10,7 @@
 # Auto Commit and Push
 
 A GitHub project that automatically commits and pushes all changes that happen in your directory every 6 hours.
+Greatly inspired from [this repo](https://github.com/gitwatch/gitwatch) from [gitwatch](https://github.com/gitwatch)
 
 ## Prerequisites
 
@@ -131,6 +132,7 @@ Restart your computer to ensure that the `startup_program.exe` runs automaticall
 # Auto Commit and Push
 
 Un projet GitHub qui effectue automatiquement des commits et des pushs de toutes les modifications qui se sont produits dans votre répertoire toutes les 6 heures.
+Grandement inspiré de [ce repo](https://github.com/gitwatch/gitwatch) de [gitwatch](https://github.com/gitwatch)
 
 ## Prérequis
 
