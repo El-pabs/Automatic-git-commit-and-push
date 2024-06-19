@@ -15,7 +15,7 @@ Greatly inspired from [this repo](https://github.com/gitwatch/gitwatch) from [gi
 ## Prerequisites
 
 - [Cygwin](https://www.cygwin.com/) installed on your Windows machine.
-- [Git](https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git) installed and configured with your GitHub repository  [how to set-up a git repo](https://www.atlassian.com/git/tutorials/setting-up-a-repository)..
+- [Git](https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git) installed and configured with your GitHub repository  [how to set-up a git repo](https://www.atlassian.com/git/tutorials/setting-up-a-repository).
 - [MinGW](https://sourceforge.net/projects/mingw/) (Minimalist GNU for Windows) installed to compile C programs.
 
 ## Setup
