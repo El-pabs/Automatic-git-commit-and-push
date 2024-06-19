@@ -16,7 +16,7 @@ Greatly inspired from [this repo](https://github.com/gitwatch/gitwatch) from [gi
 
 - [Cygwin](https://www.cygwin.com/) installed on your Windows machine.
 - Git installed and configured with your GitHub repository.
-- MinGW (Minimalist GNU for Windows) installed to compile C programs.
+- [MinGW](https://sourceforge.net/projects/mingw/) (Minimalist GNU for Windows) installed to compile C programs.
 
 ## Setup
 
@@ -138,7 +138,7 @@ Grandement inspiré de [ce repo](https://github.com/gitwatch/gitwatch) de [gitwa
 
 - [Cygwin](https://www.cygwin.com/) installé sur votre machine Windows.
 - Git installé et configuré avec votre dépôt GitHub.
-- MinGW (Minimalist GNU for Windows) installé pour compiler les programmes C.
+- [MinGW](https://sourceforge.net/projects/mingw/) (Minimalist GNU for Windows) installé pour compiler les programmes C.
 
 ## Configuration
 
